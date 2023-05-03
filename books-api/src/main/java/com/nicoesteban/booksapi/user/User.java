@@ -1,15 +1,10 @@
 package com.nicoesteban.booksapi.user;
 
-import com.nicoesteban.booksapi.collection.Collection;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.List;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -28,12 +23,13 @@ public class User {
         this.password = password;
     }
 
-    //@OneToMany(mappedBy = "user")
-    //private List<Collection> collections;
+    /*
+    @OneToMany(mappedBy = "user")
+    private List<Collection> collections;
 
-    /*public void addCollection(Collection collection) {
+    public void addCollection(Collection collection) {
         collections.add(collection);
-        collection.setUser(this); //ESTO Q ES???
+        collection.setUser(this);
     }
 
     public void removeCollection(Collection collection) {
